@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>我要表白了</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">/**</span><br />
+			<span class="space"/><span class="comments">*2017—07-11</span><br />
+			<span class="space"/><span class="comments">*forever</span><br />
+			<span class="space"/><span class="comments">*/</span><br />
+			Game name = <span class="keyword">逢场戏</span><br />
+			Family name = <span class="keyword">陪你一起去流浪！</span><br />
+			<span class="comments">// 2017年6月底 </span><br />
+			我下载了游戏<br />
+			<span class="comments">// 开始了我的还珠世界.</span><br />
+			在游戏里结识了初中生贝贝！<br />
+			<span class="comments">// 随后.</span><br />
+			我又认识了悦悦;<br />
+			<span class="comments">// 再然后.</span><br />
+			我来到了《陪你一起去流浪》<br />
+			<span class="comments">// 认识了虞猪，无忌，微凉，猪迪，小妖精，轩，诸葛等等.</span><br />
+			<span class="comments">// 尤其是我还找到了游戏里的她，秋（Baby）.</span><br />
+			<span class="keyword">我很高兴认识你们！</span><br />
+			<span class="keyword">有那么漂亮的虞猪，那么善良的猪迪，那么有爱心的秋···</span>;<br />
+			<span class="placeholder"/><span class="comments">// 爱你们</span><br />
+			<span class="placeholder"/><span class="comments">// 虞猪，秋，猪迪，贝贝.</span><br />
+			<span class="placeholder"/>The boy has but one dream;<br />
+			<span class="comments">// The boy wants them could well have been happy.</span><br />
+			<br/>
+			<br/>
+			I want to say:<br />
+			Baby, I love you forever,Just qiu;<br />
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					亲爱的，这是我们相爱在一起的时光。
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					爱你直到永永远远。<br/>
+					<div class="signature">- 爱你的人 Mr Feng</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="copyright">
+		Design By &nbsp;<a href="mailto:570854551@qq.com">Mr Feng</a><br />
+	</div>
+	<audio src="music/爱很简单.mp3" autoplay>您的浏览器不支持audio标签</audio>
+</div>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2017, 7-1, 11-1);
+together.setHours(20);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+
+</body>
+</html>
